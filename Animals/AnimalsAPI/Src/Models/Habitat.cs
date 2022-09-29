@@ -3,7 +3,7 @@
 namespace AnimalsAPI.Src.Models
 {
 
-    [Table("tb_ambiente")]
+    [Table("tb_habitat")]
     public class Habitat
     {
         #region Atributos
@@ -13,6 +13,6 @@ namespace AnimalsAPI.Src.Models
         #endregion
 
         [ForeignKey("fk_animal")]
-        public Animal Animal { get; set; }
+        public Animal HabitatDoAnimal { get; set; }
     }
 }
