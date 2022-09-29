@@ -14,7 +14,7 @@ namespace AnimalsAPI.Src.Context
     {
         #region Atributos
 
-        public DbSet<Animal> Usuarios { get; set; }
+        public DbSet<Animal> Animais { get; set; }
 
         public DbSet<Habitat> Habitats { get; set; }
         #endregion

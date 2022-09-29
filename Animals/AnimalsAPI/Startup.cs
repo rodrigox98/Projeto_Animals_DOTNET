@@ -1,4 +1,6 @@
 using AnimalsAPI.Src.Context;
+using AnimalsAPI.Src.Repositories;
+using AnimalsAPI.Src.Repositories.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,8 +28,14 @@ namespace AnimalsAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AnimalsContext>(opt 
+            //Configuração do banco de dados
+            services.AddDbContext<AnimalsContext>(opt
             => opt.UseSqlServer(Configuration["ConnectionStringsDev:DefaultConnection"]));
+
+            //Repositorios
+            services.AddScoped<IAnimal, AnimalRepository>();
+
+            //Controladores
             services.AddControllers();
         }
 
